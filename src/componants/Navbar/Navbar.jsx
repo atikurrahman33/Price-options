@@ -1,9 +1,11 @@
 import { list } from 'postcss';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from '../link/Link';
+import {AiOutlineMenu ,AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = () => {
-
+    const[open,setOpen]=useState(false)
+   
     const routes = [
         { path: '/', name: 'Home', id: 'home' },
         { path: '/about', name: 'About', id: 'about' },
@@ -15,8 +17,16 @@ const Navbar = () => {
     
       
     return (
-        <nav>
-            <ul className='md: flex'>
+        
+        <nav className='text-black bg-yellow-200 p-6'>
+             <div className=' md:hidden text-2xl' onClick={()=> setOpen(!open)}>
+                {
+                    open===true ? <AiOutlineClose></AiOutlineClose>:  <AiOutlineMenu ></AiOutlineMenu>
+                }
+            
+             </div>
+            <ul className={`md:flex bg-yellow-200 absolute duration-1000
+            ${open?  'top-16':  '-top-60'} md:static px-6 `}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link> )
                 }

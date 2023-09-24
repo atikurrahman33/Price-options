@@ -1,6 +1,12 @@
 import './App.css'
-// import Daisynav from './componants/daissy/Daisynav'
+
 import Navbar from './componants/Navbar/Navbar'
+import LineChart from './componants/lineChart/LineChart'
+import PriceOptions from './componants/priceOptions/PriceOptions'
+
+
+
+
 
 function App() {
   
@@ -11,7 +17,10 @@ function App() {
      
 
      <Navbar></Navbar>
+     
      <h1 className='text-7xl bg-red-600'>Vite + React</h1>
+     <PriceOptions></PriceOptions>
+     <LineChart></LineChart>
      
      </div>
          
